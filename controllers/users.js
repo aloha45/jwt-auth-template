@@ -15,13 +15,11 @@ async function signup(req, res) {
     const token = createJWT(user);
     res.json({ token });
   } catch (err) {
-    console.log('derp', err.errmsg)
-    console.log("^^^^^^ ERROR ON BACKEND users/controllers/users.signup ^^^^^^")
-    // const errMsg = JSON.parse(err)
     res.status(400).send({'err': err.errmsg});
   }
 }
 
+// Hold on to this
 // async function signup(req, res) {
 //   const user = new User(req.body);
 //   try {
